@@ -1,68 +1,67 @@
 from flask import Flask, render_template, request
 import cv2
-from keras.models import load_model
-import numpy as np
+import numpy as np 
+from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
-
 @app.route('/')
 def index():
-    return render_template('index.html')
+	return render_template('index.html')
 
-@app.route('/after', methods=['GET', 'POST'])
-def after():
-    img = request.files['file1']
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+	image = request.files['select_file']
 
-    img.save('static/file.jpeg')
+	image.save('static/file.jpeg')
 
-    ####################################
-    img1 = cv2.imread('static/file.jpeg')
-    gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-    cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
-    faces = cascade.detectMultiScale(gray, 1.1, 3)
+	image = cv2.imread('static/file.jpeg')
 
-    for x,y,w,h in faces:
-        cv2.rectangle(img1, (x,y), (x+w, y+h), (0,255,0), 2)
+	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+	cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
+	
+	faces = cascade.detectMultiScale(gray, 1.1, 3)
 
-        cropped = img1[y:y+h, x:x+w]
+	for x,y,w,h in faces:
+		cv2.rectangle(image, (x,y), (x+w, y+h), (0,255,0), 2)
 
-    cv2.imwrite('static/after.jpeg', img1)
+		cropped = image[y:y+h, x:x+w]
 
-    try:
-        cv2.imwrite('static/cropped.jpeg', cropped)
 
-    except:
-        pass
+	cv2.imwrite('static/after.jpeg', image)
+	try:
+		cv2.imwrite('static/cropped.jpeg', cropped)
 
-    #####################################
+	except:
+		pass
 
-    try:
-        image = cv2.imread('static/cropped.jpeg', 0)
-    except:
-        image = cv2.imread('static/file.jpeg', 0)
 
-    image = cv2.resize(image, (48,48))
 
-    image = image/255.0
+	try:
+		img = cv2.imread('static/cropped.jpeg', 0)
 
-    image = np.reshape(image, (1,48,48,1))
+	except:
+		img = cv2.imread('static/file.jpeg', 0)
 
-    model = load_model('EmotionDetectionModel.h5')
+	img = cv2.resize(img, (48,48))
+	img = img/255
 
-    prediction = model.predict(image)
+	img = img.reshape(1,48,48,1)
 
-    label_map =   ['Anger','Neutral' , 'Fear', 'Happy', 'Sad', 'Surprise']
+	model = load_model('EmotionDetectionModel.h5')
 
-    prediction = np.argmax(prediction)
+	pred = model.predict(img)
 
-    final_prediction = label_map[prediction]
 
-    return render_template('after.html', data=final_prediction)
+	label_map = ['Anger','Neutral' , 'Fear', 'Happy', 'Sad', 'Surprise']
+	pred = np.argmax(pred)
+	final_pred = label_map[pred]
+
+
+	return render_template('predict.html', data=final_pred)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
-
+	app.run(debug=True)
