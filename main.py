@@ -230,4 +230,4 @@ def imageurl():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='e-m.herokuapp.com',debug=True)
