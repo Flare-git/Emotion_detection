@@ -18,9 +18,10 @@
 	height: 270px;
 	position: relative;       /* for making the cards positions relative */
 	display: flex;
-    margin: 60px;
-    margin-bottom:50px;
-    margin-top:50px;
+    margin: 50px;
+    margin-bottom:60px;
+    margin-top:30px;
+	
 }
 
 .card__img {
@@ -29,29 +30,35 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-    transition: .5s;          /* transition time for animation */
-	z-index: 2;               /* to specify the stack order */           
+    transition: .3s;          /* transition time for animation */
+	z-index: 2; 
+	border-width: 2px;
+	border-color: white;              /* to specify the stack order */           
 }
 
 .card__img img {
 	position: absolute;
+	border-width: 2px;
+	border-color: white; 
 	text-transform: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: .5s;
+	transition: .3s;
 	z-index: 2;
 	object-fit: cover;   /*to make the image strech to size of card */
 }
 
 .card__body {
+	border-width: 2px;
+	border-color: white; 
 	position: absolute;     
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: .5s;
-	background: #786bbf;
+	transition: .3s;
+	background: black;
 	z-index: 1;           /* the value 1 will allow it to stack on top */ 
 	display: flex;
 	flex-direction: column;   /*sets the main axis to be columns */
@@ -65,19 +72,22 @@
 	justify-content:center; 
 }
 .card__body h2 {        
-	font-size: 20px;
+	font-size: 15px;
+	border-width: 2px;
+	border-color: white; 
 	color: #ffffff;
-	line-height: 20px;
+	line-height: 15px;
 	font-weight: 500;
 	text-align: center;
 }
 
 .card:hover .card__img {             /* will be used when we hover the mouse above cards */
-	transform: translate(35px, -35px); 
+	transform: translate(0px,-45px); 
+	
 }
 
 .card:hover .card__body {
-	transform: translate(-35px, 35px);
+	transform: translate(0px, 45px);
 }
 
 @media screen and (max-width: 768px) {
@@ -91,24 +101,12 @@
 }
 </style>
 </head>
-<body>
+<body style="background-color: black;">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nasv-item">
-        <a class="nav-link" href="#">Contact Us</a>
-      </li> 
-    </ul>
-  </div>
+  <a class="navbar-brand" href="Start.html" style="font-family: Arial, Helvetica, sans-serif; padding-left: 1em; font-weight: bolder;">EMOTION DETECTION</a>
+  
 </nav>
-<h1 class="text-center">
+<h1 class="text-center" style="color: white; padding-top: 30px;">
 				Our Team
 			</h1>       
 	<div class="container">
@@ -118,7 +116,8 @@
 				<img src="img/prajwal.jpg" alt="">
 			</div>
 			<div class="card__body">
-				<h2>Prajwal</h2>
+				<h2>Prajwal Negi</h2>
+				<h2>17BCS3971</h3>	
 			</div>
 		</div>
 		<div class="card">
@@ -127,6 +126,7 @@
 			</div>
 			<div class="card__body">
 				<h2>Jugnu Gill</h2>	
+				<h2>17BCS3914</h3>	
 			</div>
 		</div>
 		<div class="card">
@@ -134,7 +134,8 @@
 				<img src="img/aakash.jpg" alt="">
 			</div>
 			<div class="card__body">
-				<h2>Aakashdeep Singh</h2>	
+				<h2>Aakashdeep Singh</h2>
+				<h2>17BCS3913</h3>	
 			</div>
     </div>
         <div class="card">
@@ -142,7 +143,8 @@
 				<img src="img/naman.jpg" alt="">
 			</div>
 			<div class="card__body">
-				<h2>Naman Gupta</h2>	
+				<h2>Naman Gupta</h2>
+				<h2>17BCS3920</h3>		
 			</div>
     </div>
         <div class="card">
@@ -151,6 +153,7 @@
 			</div>
 			<div class="card__body">
 				<h2>Vansh Sharma</h2>	
+				<h2>17BCS3905</h3>	
 			</div>
 		</div>
 	</div>
