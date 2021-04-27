@@ -67,44 +67,42 @@ def mood(result):
 
 def provide_url(result):
     if result=="Happy":
-        return 'https://open.spotify.com/playlist/1BVPSd4dynzdlIWehjvkPj'
+        return 'https://www.youtube.com/watch?v=8ugaeA-nM'
     elif result=="Sad":
-        return 'https://www.writediary.com/ '
+        return 'https://www.youtube.com/watch?v=8ugaeA-nM '
     elif result=="Disgust":
-        return 'https://open.spotify.com'
+        return 'https://www.youtube.com/watch?v=wmiIUN-7qhE'
     elif result=="Neutral":
-         return 'https://www.netflix.com/'
+         return 'https://www.youtube.com/watch?v=8ugaeA-nMTc'
     elif result=="Fear":
-        return 'https://www.youtube.com/watch?v=KWt2-lUpg-E'
+        return 'https://www.youtube.com/watch?v=8ugaeA-nM'
     elif result=="Angry":
-        return 'https://www.onlinemeditation.org/'
+        return 'https://www.youtube.com/watch?v=8ugaeA-nM'
     elif result=="Surprise":
-        return 'https://www.google.com/search?q=hotels+near+me&oq=hotels+&aqs=chrome.1.69i57j0i433i457j0i402l2j0i433l4j0l2.3606j0j7&sourceid=chrome&ie=UTF-8'
+        return 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 
 
 def activities(result):
     if result == "Happy":
-        return '• Try out some dance moves'
-
+        return ' DEADPOOL'
 
     elif result == "Sad":
-        return '• Write in a journal'
+        return ' A SILENT VOICE'
 
     elif result == "Disgust":
-        return '• Listen soothing music'
+        return ' TOY STORY'
 
     elif result == "Neutral":
-        return '• Watch your favourite movie'
+        return ' IRON MAN'
 
     elif result == "Fear":
-        return '• Get a good sleep'
+        return ' CONJURING-have a good heart-attack !!'
 
     elif result == "Angry":
-        return '• Do meditation'
-
+        return ' UNDISPUTED'
 
     elif result == "Surprise":
-        return '• Give yourself a treat' \
+        return ' INCEPTION' \
 
 
 @app.route('/')
@@ -112,6 +110,12 @@ def Start():
     """ Renders the Home Page """
 
     return render_template('Start.html')
+
+@app.route('/about')
+def about():
+    """ Renders the about Page """
+
+    return render_template('about-us.html')
 
 
 @app.route('/video_feed')
