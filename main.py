@@ -113,6 +113,12 @@ def Start():
 
     return render_template('Start.html')
 
+@app.route('/about')
+def about():
+    """ Renders the about Page """
+
+    return render_template('about-us.html')
+
 
 @app.route('/video_feed')
 def video_feed():

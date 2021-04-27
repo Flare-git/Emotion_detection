@@ -14,6 +14,7 @@
 	<style>
 
 .card {
+	border-radius: 20px;
 	width: 270px;
 	height: 270px;
 	position: relative;       /* for making the cards positions relative */
@@ -21,10 +22,12 @@
     margin: 50px;
     margin-bottom:60px;
     margin-top:30px;
+	background-color: rgba(18,18,18,.95);
 	
 }
 
 .card__img {
+	border-radius: 20px;
 	position: absolute;        /* absolute position of image and body makes sure they remain stacked properly */
 	top: 0;
 	left: 0;
@@ -32,14 +35,13 @@
 	height: 100%;
     transition: .3s;          /* transition time for animation */
 	z-index: 2; 
-	border-width: 2px;
-	border-color: white;              /* to specify the stack order */           
+	
+	border-color:rgba(18,18,18,.95);              /* to specify the stack order */           
 }
 
 .card__img img {
 	position: absolute;
-	border-width: 2px;
-	border-color: white; 
+	border-radius: 20px;
 	text-transform: 0;
 	left: 0;
 	width: 100%;
@@ -50,32 +52,31 @@
 }
 
 .card__body {
-	border-width: 2px;
-	border-color: white; 
+	
 	position: absolute;     
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	transition: .3s;
-	background: black;
+	background: rgba(18,18,18,1);
 	z-index: 1;           /* the value 1 will allow it to stack on top */ 
 	display: flex;
 	flex-direction: column;   /*sets the main axis to be columns */
 	align-items: center;
 	justify-content: flex-end;
 	padding: 15px;
+	border-radius: 20px;
 }
 .container{
 	display: flex;
 	flex-wrap:wrap;
 	justify-content:center; 
 }
-.card__body h2 {        
+.card__body h2 {
+	border-radius: 20px;        
 	font-size: 15px;
-	border-width: 2px;
-	border-color: white; 
-	color: #ffffff;
+	color: white;
 	line-height: 15px;
 	font-weight: 500;
 	text-align: center;
@@ -101,9 +102,9 @@
 }
 </style>
 </head>
-<body style="background-color: black;">
+<body style="background-color:rgba(18,18,18,.95)">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="Start.html" style="font-family: Arial, Helvetica, sans-serif; padding-left: 1em; font-weight: bolder;">EMOTION DETECTION</a>
+  <a class="navbar-brand" href="/" style="font-family: Arial, Helvetica, sans-serif; padding-left: 1em;">EMOTION DETECTION</a>
   
 </nav>
 <h1 class="text-center" style="color: white; padding-top: 30px;">
@@ -113,7 +114,7 @@
 			
 		<div class="card">
 			<div class="card__img">
-				<img src="img/prajwal.jpg" alt="">
+				<img src="/static/prajwal.jpg" alt="">
 			</div>
 			<div class="card__body">
 				<h2>Prajwal Negi</h2>
@@ -122,7 +123,7 @@
 		</div>
 		<div class="card">
 			<div class="card__img">
-				<img src="img/jugnu.jpg" alt="">
+				<img src="/static/jugnu.jpg" alt="">
 			</div>
 			<div class="card__body">
 				<h2>Jugnu Gill</h2>	
@@ -131,7 +132,7 @@
 		</div>
 		<div class="card">
 			<div class="card__img">
-				<img src="img/aakash.jpg" alt="">
+				<img src="/static/aakash.jpg" alt="">
 			</div>
 			<div class="card__body">
 				<h2>Aakashdeep Singh</h2>
@@ -140,7 +141,7 @@
     </div>
         <div class="card">
 			<div class="card__img">
-				<img src="img/naman.jpg" alt="">
+				<img src="/static/naman.jpg" alt="">
 			</div>
 			<div class="card__body">
 				<h2>Naman Gupta</h2>
@@ -149,7 +150,7 @@
     </div>
         <div class="card">
 			<div class="card__img">
-				<img src="img/vansh.jpg" alt="">
+				<img src="/static/vansh.jpg" alt="vansh.jpg">
 			</div>
 			<div class="card__body">
 				<h2>Vansh Sharma</h2>	
