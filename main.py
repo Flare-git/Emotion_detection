@@ -67,17 +67,17 @@ def mood(result):
 
 def provide_url(result):
     if result=="Happy":
-        return 'https://www.youtube.com/watch?v=8ugaeA-nM'
+        return 'https://www.youtube.com/watch?v=Xithigfg7dA'
     elif result=="Sad":
-        return 'https://www.youtube.com/watch?v=8ugaeA-nM '
+        return 'https://www.youtube.com/watch?v=nfK6UgLra7g'
     elif result=="Disgust":
         return 'https://www.youtube.com/watch?v=wmiIUN-7qhE'
     elif result=="Neutral":
          return 'https://www.youtube.com/watch?v=8ugaeA-nMTc'
     elif result=="Fear":
-        return 'https://www.youtube.com/watch?v=8ugaeA-nM'
+        return 'https://www.youtube.com/watch?v=k10ETZ41q5o'
     elif result=="Angry":
-        return 'https://www.youtube.com/watch?v=8ugaeA-nM'
+        return 'https://www.youtube.com/watch?v=hPNBoL08tYI'
     elif result=="Surprise":
         return 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 
